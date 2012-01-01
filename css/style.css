@@ -1,0 +1,127 @@
+/* 
+Title: Photo Tagging
+Author: Neill Horsman
+URL: http://www.neillh.com.au
+Credits: jQuery, imgAreaSelect 
+*/
+
+body { background:#ccc; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#000; padding:10px; }
+.clear { clear:both; }
+.hide { display:none; }
+
+#site {
+background:#fff;
+width:800px;
+margin:0 auto;
+padding:20px;
+}
+
+h1 {
+padding-bottom:5px;
+margin-bottom:10px;
+border-bottom:1px solid #ccc;
+font-size:21px;
+}
+h1 a {
+color:#000;
+}
+h1 a:hover {
+color:#ccc;
+}
+h2 {
+margin-bottom:10px;
+padding-bottom:5px;
+border-bottom:1px solid #ccc;
+font-size:18px;
+}
+p {
+margin-bottom:10px;
+}
+
+h3 {
+margin:0px;
+padding:0px;
+}
+
+
+/* Tagging specfic styles here */
+.on-off {
+height:25px;
+}
+.start-tagging, .finish-tagging {
+background:#111111;
+width:160px;
+padding:5px 0;
+border:1px solid #333;
+color:#fff;
+cursor:pointer;
+font-weight:bold;
+text-align:center;
+}
+
+/* Image Map CSS */
+.map li {
+margin:0;
+padding:0;
+list-style:none;
+}
+.map li a {
+position:absolute;
+display:block;
+cursor:pointer;
+color:#000;
+}
+.map li a span {
+display:none;
+}
+.map li a:hover span, .selected {
+background:#fff;
+/*Add a width in here to control your comment hover*/
+padding:5px;
+display:block;
+position:absolute;
+top:50px;
+left:2px;
+border:1px solid #000;
+filter:alpha(opacity=80);
+opacity:0.8;
+}
+.map li a.hover, .map li a:hover {
+background:url(../images/tag_hotspot_on_62x62.png) no-repeat;
+}
+/*
+use this for a sqaure border highlight
+.map li a.hover, .map li a:hover { border:3px solid #fff; }
+*/
+
+.image {
+width:800px;
+margin-bottom:15px;
+position:relative;
+}
+
+img {
+border:1px solid #000;
+}
+#titles {
+margin-bottom:50px;
+}
+#titles li {
+margin:0 0 5px 15px;
+list-style: disc;
+}
+
+/* Form CSS */
+#title_container { background:#fff; position:absolute; z-index:999; border:1px solid #000;; width:100px; padding:10px; }
+label { font-size:14px; font-weight:bold; color:#333; }
+input { width:100px; }
+.send { position:absolute; left:5px; top:755px; }
+
+/* Error box */
+#error-box { width:200px; height:60px; padding:10px; margin-left:300px; background:#ffadad; border:1px #000 solid; position:absolute; top:303px; z-index:1; }
+.confirm { background:#0FC !important; color:#333 !important; }
+.err { list-style-image:url('../images/Cancel_16x16.png'); margin-left:25px; }
+.confirm .err { list-style-image:url('../images/check.gif'); }
+.err li { margin-bottom:8px; }
+.closebtn { position:absolute; bottom:10px; right:10px; background:url('../images/Cancel_16x16.png') no-repeat 0px 0; padding-left:15px; }
+.confirm .closebtn { background:url('../images/check.gif') no-repeat 0px 0; }

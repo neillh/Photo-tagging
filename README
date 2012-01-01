@@ -1,0 +1,15 @@
+Neill Horsman
+
+
+SQL
+CREATE TABLE `phototags` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(255) default NULL,
+  `x1` int(11) default NULL,
+  `y1` int(11) default NULL,
+  `x2` int(11) default NULL,
+  `y2` int(11) default NULL,
+  `width` int(11) default NULL,
+  `height` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+)
