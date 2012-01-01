@@ -117,7 +117,7 @@ function clean($str) {
 	return mysql_real_escape_string($str);
 }
 
-if($_POST['tag']) {
+if(!empty($_POST['tag'])) {
 	//Sanitize the POST values
 	$title = clean($_POST['comment']);
 	$x1 = clean($_POST['x1']);
@@ -165,7 +165,7 @@ if($_POST['tag']) {
 		}
 	}
 	exit();
-} else if($_GET['delete']) {
+} else if(!empty($_GET['delete'])) {
 	//Sanitize the POST values
 	$id = clean($_GET['id']);
 	$qry = " DELETE FROM phototags where id = $id ";
