@@ -1,12 +1,13 @@
 <?php
 //include db connect and seassion start.
 include 'includes/function.php';
+$con = db_connect();
 ?>
-<!-- 
+<!--
 Title: Photo Tagging
 Author: Neill Horsman
 URL: http://www.neillh.com.au
-Credits: jQuery, imgAreaSelect 
+Credits: jQuery, imgAreaSelect
 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,21 +20,21 @@ Credits: jQuery, imgAreaSelect
 
   <!-- Styles for tagging  -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-	
+
 	<!-- Styles for the jquery plugin from http://odyniec.net/projects/imgareaselect/ not supported by neillh.com.au -->
-	<link rel="stylesheet" type="text/css" href="css/imgareaselect-animated.css" /> 
+	<link rel="stylesheet" type="text/css" href="css/imgareaselect-animated.css" />
 
   <!-- Include jquery via google apis -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
   <!-- The jquery plugin from http://odyniec.net/projects/imgareaselect/ not supported by neillh.com.au -->
 	<script type="text/javascript" src="js/jquery.imgareaselect.pack.js"></script>
-	
+
 	<!-- Phototagging Load js -->
 	<script type="text/javascript" src="js/jquery.load.js"></script>
 
   <!-- Outputs all tag styles, in the head for validation purposes. -->
-  <?php echo get_tags('styles'); ?>
+  <?php echo get_tags($con, 'styles'); ?>
 </head>
 <body>
   <div id="site">
@@ -42,7 +43,7 @@ Credits: jQuery, imgAreaSelect
     if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
     	echo "<div id='error-box'><ul class='err'>";
     	foreach($_SESSION['ERRMSG_ARR'] as $msg) {
-    		echo "<li>",$msg,"</li>"; 
+    		echo "<li>",$msg,"</li>";
     	}
     	echo "</ul><span class='closebtn'><a href='#' id='error-link'>close</a></span></div>";
     	unset($_SESSION['ERRMSG_ARR']);
@@ -81,14 +82,14 @@ Credits: jQuery, imgAreaSelect
 
       <!-- The UL can be moved into the function if wanted -->
     	<ul class="map">
-        <?php echo get_tags('map'); ?>
+        <?php echo get_tags($con, 'map'); ?>
     	</ul>
     </div>
 
     <h2 class="tagtitles">In this photo:</h2>
     <!-- The UL can be moved into the function if wanted -->
     <ul id="titles">
-      <?php echo get_tags('list'); ?>
+      <?php echo get_tags($con, 'list'); ?>
     </ul>
 
   <!-- END -->
@@ -97,15 +98,7 @@ Credits: jQuery, imgAreaSelect
 
 
   <h2>Notes.</h2>
-  
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-    <fieldset>
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="58X2GPSA5Q6TQ">
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-      <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
-    </fieldset>
-  </form>
+
   <br />
   <p>Working in Firefox, Chrome, Safari, IE8</p>
 

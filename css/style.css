@@ -1,8 +1,8 @@
-/* 
+/*
 Title: Photo Tagging
 Author: Neill Horsman
 URL: http://www.neillh.com.au
-Credits: jQuery, imgAreaSelect 
+Credits: jQuery, imgAreaSelect
 */
 
 body { background:#ccc; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#000; padding:10px; }
@@ -80,14 +80,14 @@ background:#fff;
 padding:5px;
 display:block;
 position:absolute;
-top:50px;
-left:2px;
+top:0px;
+left:0px;
 border:1px solid #000;
 filter:alpha(opacity=80);
 opacity:0.8;
 }
 .map li a.hover, .map li a:hover {
-background:url(../images/tag_hotspot_on_62x62.png) no-repeat;
+border-color: green;
 }
 /*
 use this for a sqaure border highlight

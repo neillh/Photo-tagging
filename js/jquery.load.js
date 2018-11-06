@@ -1,8 +1,8 @@
-/* 
+/*
 Title: Photo Tagging
 Author: Neill Horsman
 URL: http://www.neillh.com.au
-Credits: jQuery, imgAreaSelect 
+Credits: jQuery, imgAreaSelect
 */
 
 $(window).ready(function() {
@@ -18,8 +18,8 @@ $(window).ready(function() {
 			handles: true, //grab handels when selecting the area
 			keys: { arrows: 15, shift: 5 }, //keyboard support
 			aspectRatio: '1:1',
-			maxWidth: 62, //adjust the max tag width
-			maxHeight: 62, //adjust the max tag height
+			maxWidth: 100, //adjust the max tag width
+			maxHeight: 100, //adjust the max tag height
 			fadeSpeed: 200,
 			onSelectEnd: function(img, selection){ //after you have selected an area, show the form and insert tag location values into a form
 				$('input#x1').val(selection.x1);
@@ -58,7 +58,7 @@ $(window).ready(function() {
   $('.map li a').hover(function() {
     $(this).find('span').show();
   }, function() {
-    $(this).find('span').hide();  
+    $(this).find('span').hide();
   });
 
 	//Close the error box for form pages
